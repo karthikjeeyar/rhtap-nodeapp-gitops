@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rhtap-nodeapp
+  name: rhtest-nodeapp
   namespace: openshift-gitops
   finalizers: ["resources-finalizer.argocd.argoproj.io"] 
 spec:
@@ -11,7 +11,7 @@ spec:
     repoURL: https://github.com/karthikjeeyar/rhtap-nodeapp-gitops.git
     targetRevision: main
   destination:
-    namespace: rhtap-app
+    namespace: rhd-test
     server: https://kubernetes.default.svc
   syncPolicy:
     managedNamespaceMetadata:
